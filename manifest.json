@@ -1,0 +1,39 @@
+{
+    "manifest_version": 2,
+    "name":"gbf黑名单",
+    "version":"1.0",
+    "description":"进入黑名单的在救援或者共斗的时候会提示",
+    "icons": {
+        "16": "img/icon.png",
+		"48": "img/icon.png",
+		"128": "img/icon.png"
+    },
+    "browser_action": {
+		"default_icon": "img/icon.png",
+		"default_title": "这是一个示例Chrome插件",
+		"default_popup": "popup.html"
+    },
+	"permissions": [
+		"notifications", 
+		"webRequest",
+		"webRequestBlocking",
+		"webNavigation",
+        "storage", 
+        "tabs",
+		"http://game.granbluefantasy.jp/*",
+		"ws://*/"
+    ],
+    "background": {
+		"scripts": [
+            "js/jquery.min.js", "js/background.js"
+		],
+		"persistent":true
+    },
+    "content_scripts": 
+	[
+		{
+			"matches": ["http://game.granbluefantasy.jp/*"],
+			"js": ["js/jquery.min.js", "js/content-script.js"]
+		}
+	]
+}

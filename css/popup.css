@@ -1,0 +1,13 @@
+ul{
+    /* list-style:none; */
+    /* margin:0px; */
+    padding:0px;
+}
+li {
+    list-style-type:none;
+    /* list-style:none; */
+    margin:0px;
+    padding:0px;
+    border: solid 1px black;
+    border-bottom:1px black dashed;
+}
